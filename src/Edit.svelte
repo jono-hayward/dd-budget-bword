@@ -31,13 +31,14 @@
   const close = save => {
     // Add a class that triggers the animation...
     is_open = false;
+    if ( save ) {
+      dispatch( 'closed', { saved_item: temp_item } );
+    } else {
+      temp_item = { ...item };
+    }
+
     form.addEventListener( 'transitionend', () => {
       // ...then actually closes the dialog once the animation completes
-      if ( save ) {
-        dispatch( 'closed', { saved_item: temp_item } );
-      } else {
-        temp_item = { ...item };
-      }
       dialog.close();
     }, { once: true } );
   }

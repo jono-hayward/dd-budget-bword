@@ -44,7 +44,6 @@ body {
 
   display: flex;
   flex-flow: column;
-  height: 80vh;
 }
 
 main {
@@ -67,6 +66,7 @@ svg {
 .cur {
   margin-right: .25em;
   opacity: .25;
+  color: inherit;
 }
 
 input[type='number']::-webkit-outer-spin-button,

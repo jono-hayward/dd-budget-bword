@@ -126,6 +126,7 @@
     /* margin: 0 calc(var(--gap) * -1); */
     margin: var(--gap) 0;
     padding: 0 calc( var(--gap) * .5 );
+    color: var(--c-text);
   }
 
   .form_item.final {

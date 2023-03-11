@@ -36,8 +36,17 @@
 
     window.addEventListener('DOMContentLoaded', function(){
        if (navigator.standalone || window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches || window.matchMedia('(display-mode: minimal-ui)').matches) {
-         hide_prompt = true;
+          hide_prompt = true;
         }
+        window.matchMedia('(display-mode: standalone)').addListener( e => {
+          if ( e.matches ) { hide_prompt = true; }
+        });
+        window.matchMedia('(display-mode: fullscreen)').addListener( e => {
+          if ( e.matches ) { hide_prompt = true; }
+        });
+        window.matchMedia('(display-mode: minimal-ui)').addListener( e => {
+          if ( e.matches ) { hide_prompt = true; }
+        });
     });
 
     window.addEventListener('beforeinstallprompt', e => {

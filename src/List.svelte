@@ -2,6 +2,7 @@
 
   import Edit from './Edit.svelte';
   import Item from './Item.svelte';
+  import Icon from './Icon.svelte';
 
   import { groceries } from './stores.js';
   import { suggestions } from './suggestions.json';
@@ -71,7 +72,9 @@
     <Item bind:item />
   </li>
 {/each}</ul>
-<button class="add" on:click={ addItem }>+</button>
+<button class="add" on:click={ addItem }>
+  <Icon name="add-item" />
+</button>
 
 <datalist id="suggestions">{#each suggestions as s}
   <option>{s}</option>

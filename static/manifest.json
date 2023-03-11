@@ -14,13 +14,5 @@
     "display": "standalone",
     "scope": "/",
     "theme_color": "#6CD4FF",
-    "shortcuts": [
-      {
-        "name": "Add new item",
-        "short_name": "Add",
-        "description": "Add a new item to the shopping list",
-        "url": "/add"
-      }
-    ],
-    "description": "Simmple shopping list app that helps you stick to your budget"
+    "description": "Simple shopping list app that helps you stick to your budget"
 }

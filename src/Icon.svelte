@@ -1,7 +1,7 @@
 <script>
     export let name;
-    export let width = "1.5rem";
-    export let height = "1.5rem";
+    export let width = "18px";
+    export let height = "18px";
     export let focusable = false;
 </script>
 

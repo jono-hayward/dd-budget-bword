@@ -8,7 +8,7 @@
 		"predev": "npm run sprites",
 		"build": "vite build",
 		"preview": "vite preview",
-		"sprites": "svgo -f ./static/sprite -o ./static/sprite && svgstore -o ./static/icons.svg ./static/sprite/*.svg",
+		"sprites": "svgo -f ./sprite -o ./sprite && svgstore -o ./static/icons.svg ./sprite/*.svg",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint ."

@@ -10,6 +10,10 @@
 
   let menu_open = false;
 
+  let installable = true;
+  let prompt;
+  let hide_prompt = false;
+
   let menu_toggle = () => {
     menu_open = !menu_open;
   }
@@ -29,6 +33,29 @@
     window.addEventListener( 'click', e => {
       if ( !e.target.closest( 'nav' ) ) menu_open = false;
     } );
+
+    window.addEventListener('DOMContentLoaded', function(){
+       if (navigator.standalone || window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches || window.matchMedia('(display-mode: minimal-ui)').matches) {
+         hide_prompt = true;
+        }
+    });
+
+    window.addEventListener('beforeinstallprompt', e => {
+      // Prevent the mini-infobar from appearing on mobile
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      prompt = e;
+    });
+
+    window.addEventListener('appinstalled', async function(e) {
+       hide_prompt = true;
+    });
+
+
+    if (!('serviceWorker' in navigator)){
+      installable = false;
+    }
+
   }
 </script>
 
@@ -77,32 +104,33 @@
     display: flex;
     color: var(--c-text);
     margin: 0;
+    text-align: left;
   }
 
   nav {
     position: relative;
-    display: flex;
-    flex-flow: column;
     margin: 0;
     margin-right: calc( var(--gap) * -1 );
   }
 
   .menu {
-    position: absolute;
-    right: -7px;
-    top: 110%;
+    position: fixed;
+    right: 7px;
     border-radius: var(--gap);
     box-shadow: 0 4px 24px rgba(0, 0, 0, .45);
-    min-width: 45vw;
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-start;
-    z-index: 0;
     padding: 0;
     transform-origin: 88% -20%;
-    z-index: 10;
-
+    display: flex;
+    flex-flow: column;
     border: 1px solid var(--c-border);
+    z-index: 1;
+    transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .menu[hidden] {
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(.8);
   }
   .menu::before {
     content: ' ';
@@ -129,6 +157,7 @@
     color: var(--c-text);
     background: var(--c-page-bg);
     text-transform: uppercase;
+    text-align: left;
     font-size: .8em;
     font-weight: 600;
     margin: 0;
@@ -150,6 +179,14 @@
   .menu button.destructive {
     color: var(--c-cancel);
   }
+
+  .menu button span {
+    flex: 0 0 auto;
+  }
+  :global(.menu button svg) {
+    flex: 0 0 18px;
+    margin-left: var(--padding);
+  }
 </style>
 
 <div class="header">
@@ -159,15 +196,19 @@
     <button on:click={ menu_toggle } aria-label="Open menu">
       <Icon name="cog" width="20px" height="20px" />
     </button>
-    {#if menu_open}<div class="menu" in:scale={{ start: .8, easing: backOut }} out:scale={{ start: .8 }}>
+    <div class="menu" hidden={!menu_open}>
       <button on:click={ reload }>
         <span>Refresh</span>
-        <Icon name="refresh" width="16px" height="16px" />
+        <Icon name="refresh" />
       </button>
+      {#if installable && !hide_prompt}<button on:click={() => prompt.prompt()}>
+        <span>Install to home screen</span>
+        <Icon name="add-to-home" />
+      </button>{/if}
       <button class="destructive" on:click={ clear_list }>
         <span>Clear list</span>
-        <Icon name="clear" width="16px" height="16px" />
+        <Icon name="clear" />
       </button>
-    </div>{/if}
+    </div>
   </nav>
 </div>

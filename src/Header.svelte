@@ -235,7 +235,7 @@
   if ( browser ) {
 
     // Close menus when user clicks outside
-    window.addEventListener( 'click', e => {
+    window.addEventListener( 'touchstart', e => {
       if ( !e.target.closest( 'nav' ) ) menu_open = false;
     } );
 

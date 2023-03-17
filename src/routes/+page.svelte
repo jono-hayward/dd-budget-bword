@@ -2,13 +2,16 @@
   import Header from '../Header.svelte';
   import List from '../List.svelte';
   import Summary from '../Summary.svelte';
+  import Prompt from '../Prompt.svelte';
+
+  let list;
 </script>
 
 <style>
-  main {
-    flex: 1;
-    overflow: auto;
-    z-index: 0;
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
   }
 </style>
 
@@ -21,9 +24,8 @@
 </header>
 
 <main>
-  <List />
+  <List bind:this={list} />
+  <Summary list={list} />
 </main>
 
-<footer>
-  <Summary />
-</footer>
+<Prompt />

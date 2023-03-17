@@ -329,11 +329,11 @@
 
   .menu {
     position: absolute;
+    display: block;
     right: 7px;
-    padding: 0;
     transform-origin: 88% -20%;
     z-index: 1;
-    transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: opacity 250ms ease-out, transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
     list-style: none;
     margin: 0;
     padding: 0;

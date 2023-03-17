@@ -54,7 +54,7 @@
   }
 
   dialog::backdrop {
-    background: linear-gradient( to bottom, transparent 0px, transparent 60px, rgba(0, 0, 0, .45) 60px );
+    background: var(--c-shade);
     opacity: 0;
     transition: opacity 250ms ease-out;
   }
@@ -73,6 +73,10 @@
     transition: all 250ms ease-out;
     transform: translateY(200px);
     -webkit-tap-highlight-color: rgba(0, 0, 0, .15);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: center;
   }
 
   dialog.open form {
@@ -85,13 +89,14 @@
     box-shadow: 0 0 24px rgba(0, 0, 0, .25);
     background: var(--c-page-bg);
     margin: 0;
-    padding: calc( var(--gap) * 1.5 ) calc( var(--padding) - (var(--gap) * .5) ) calc( env(safe-area-inset-bottom) + var(--padding) );
+    padding: calc( var(--gap) * 2 ) calc( var(--spr) - (var(--gap) * .5) ) max( env(safe-area-inset-bottom), var(--gap) ) calc( var(--spl) - (var(--gap) * .5) );
     border: none;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     font-size: 24px;
     align-items: center;
+    max-width: 500px;
   }
 
   input {
@@ -119,6 +124,7 @@
   label {
     margin-bottom: .25em;
     display: block;
+    font-size: 12px;
   }
 
   .form_item {
@@ -208,6 +214,9 @@
     border-radius: 4px;
     padding: var(--gap) var(--gap) calc( var(--gap) * 1.2 );
     border: none;
+  }
+  button.action[disabled] {
+    opacity: .25;
   }
 
 </style>
@@ -309,7 +318,7 @@
 
       <!-- Summary -->
       <div class="form_item" style="flex-basis: 50%">
-        <button class="action" on:click={ () => close( true ) }>Save</button>
+        <button class="action" on:click={ () => close( true ) } disabled={ temp_item.title.trim() === '' }>Save</button>
       </div>
       <div class="form_item final" style="flex-basis: 50%">
         <h5>Total</h5>

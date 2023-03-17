@@ -16,13 +16,15 @@
 
   let budget_input = $budget || 0.00;
 
-  $: $budget = format(budget_input);
-
   $: sum = $groceries.reduce( (acc, curr) => currency(acc).add(curr.cost), 0 );
   $: remaining = format($budget - sum);
 
+  let text_input;
+
   const set_budget = () => {
-    budget_input = $budget;
+    budget_input = format( budget_input );
+    budget.set( budget_input );
+    text_input.blur();
   }
 </script>
 
@@ -110,17 +112,21 @@
 
 <div class:warning={remaining < 0}>
   <aside class="budget">
-    <label for="budegt"><h5>Budget</h5></label>
-    <span class="cur">$</span>
-    <input
-      type="number"
-      id="budget"
-      inputmode="decimal"
-      bind:value={budget_input}
-      placeholder="0.00"
-      on:blur={ set_budget }
-      on:focus={ highlight }
-    >
+    <form on:submit|preventDefault={ set_budget }>
+      <label for="budegt"><h5>Budget</h5></label>
+      <span class="cur">$</span>
+      <input
+        type="number"
+        id="budget"
+        inputmode="decimal"
+        bind:this={ text_input }
+        bind:value={ budget_input }
+        placeholder="0.00"
+        on:blur={ set_budget }
+        on:focus={ highlight }
+        enterkeyhint="done"
+      >
+    </form>
   </aside>
   <aside class="add">
     <button on:click={ list.addItem }>

@@ -27,205 +27,209 @@
     groceries.set([]);
   }
 
+  const test_list = [
+    {
+      "id": "d2ae0c",
+      "title": "Allspice",
+      "cost": 0.48,
+      "type": "amt",
+      "unit_price": 24,
+      "qty": 1,
+      "weight_price": 24,
+      "weight_price_unit": "kg",
+      "weight_amt": "20",
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "9aab23",
+      "title": "Rice",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "9f325f",
+      "title": "Baking paper",
+      "cost": 12,
+      "type": "qty",
+      "unit_price": 12,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": true
+    },
+    {
+      "id": "a2866e",
+      "title": "Baking soda",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "a7fb92",
+      "title": "American mustard",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "f47430",
+      "title": "Sriracha sauce",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": true
+    },
+    {
+      "id": "bdc676",
+      "title": "Thyme",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "47d35b",
+      "title": "Lettuce",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "f07678",
+      "title": "Crushed tomatoes",
+      "cost": 1.6,
+      "type": "qty",
+      "unit_price": 0.80,
+      "qty": 2,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "f33488",
+      "title": "Cloves",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "f4eb17",
+      "title": "Iced coffee",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 4,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "bad1df",
+      "title": "Pringles",
+      "cost": 5,
+      "type": "qty",
+      "unit_price": 5,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "71efd1",
+      "title": "Dish soap",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": true
+    },
+    {
+      "id": "fc209a",
+      "title": "Milk",
+      "cost": 0,
+      "type": "qty",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 0,
+      "weight_price_unit": "kg",
+      "weight_amt": 0,
+      "weight_amt_unit": "g",
+      "checked": false
+    },
+    {
+      "id": "8cef19",
+      "title": "Red pepper flakes",
+      "cost": 0.24,
+      "type": "amt",
+      "unit_price": 0,
+      "qty": 1,
+      "weight_price": 12,
+      "weight_price_unit": "kg",
+      "weight_amt": 20,
+      "weight_amt_unit": "g"
+    }
+  ];
+
   const add_sample_list = () => {
     menu_open = false;
-    const list = [
-      {
-        "id": "d2ae0c",
-        "title": "Allspice",
-        "cost": 0.48,
-        "type": "amt",
-        "unit_price": 24,
-        "qty": 1,
-        "weight_price": 24,
-        "weight_price_unit": "kg",
-        "weight_amt": "20",
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "9aab23",
-        "title": "Rice",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "9f325f",
-        "title": "Baking paper",
-        "cost": 12,
-        "type": "qty",
-        "unit_price": 12,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": true
-      },
-      {
-        "id": "a2866e",
-        "title": "Baking soda",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "a7fb92",
-        "title": "American mustard",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "f47430",
-        "title": "Sriracha sauce",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": true
-      },
-      {
-        "id": "bdc676",
-        "title": "Thyme",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "47d35b",
-        "title": "Lettuce",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "f07678",
-        "title": "Crushed tomatoes",
-        "cost": 1.6,
-        "type": "qty",
-        "unit_price": 0.80,
-        "qty": 2,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "f33488",
-        "title": "Cloves",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "f4eb17",
-        "title": "Iced coffee",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 4,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "bad1df",
-        "title": "Pringles",
-        "cost": 5,
-        "type": "qty",
-        "unit_price": 5,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "71efd1",
-        "title": "Dish soap",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": true
-      },
-      {
-        "id": "fc209a",
-        "title": "Milk",
-        "cost": 0,
-        "type": "qty",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 0,
-        "weight_price_unit": "kg",
-        "weight_amt": 0,
-        "weight_amt_unit": "g",
-        "checked": false
-      },
-      {
-        "id": "8cef19",
-        "title": "Red pepper flakes",
-        "cost": 0.24,
-        "type": "amt",
-        "unit_price": 0,
-        "qty": 1,
-        "weight_price": 12,
-        "weight_price_unit": "kg",
-        "weight_amt": 20,
-        "weight_amt_unit": "g"
-      }
-    ];
-    groceries.set( list );
+
+    if ( window.confirm('Are you sure? This will overwrite your existing list') ) {
+      groceries.set( [...test_list] );
+    }
   }
 
   if ( browser ) {
@@ -402,7 +406,10 @@
         <span>Install to home screen</span>
         <Icon name="add-to-home" />
       </button></li>{/if}
-      <li><button on:click={ add_sample_list }>Add sample list</button>
+      <li><button on:click={ add_sample_list }>
+        <span>Test with sample list</span>
+        <Icon name="list" />
+      </button>
       <li><button class="destructive" on:click={ clear_list }>
         <span>Clear list</span>
         <Icon name="clear" />

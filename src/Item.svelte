@@ -97,17 +97,17 @@
 
   .check input::after {
     content: ' ';
-    width: 8px;
-    height: 16px;
+    width: 7px;
+    height: 15px;
     background: transparent;
     position: absolute;
-    top: 37%;
-    left: 42%;
-    box-shadow: 3px 3px 0 var(--c-text), -2px -2px 0 var(--c-bg) inset, 5px 5px 0 var(--c-bg);
+    top: 40%;
+    left: 45%;
+    box-shadow: 2px 2px 0 var(--c-text), -2px -2px 0 var(--c-bg) inset, 4px 4px 0 var(--c-bg);
 
     opacity: 0;
-    transform: translate(-50%,-50%) rotate(40deg) scale(.8);
-    transform-origin: bottom right;
+    transform: translate(-50%,-50%) rotate(40deg) scale(.8, .4);
+    transform-origin: 90% 90%;
 
     transition: opacity 250ms ease-out, transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }

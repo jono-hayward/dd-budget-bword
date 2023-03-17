@@ -225,7 +225,6 @@
         "weight_amt_unit": "g"
       }
     ];
-    budget.set( format( 60 ) );
     groceries.set( list );
   }
 
@@ -305,7 +304,7 @@
     top: 50%;
 
     border-top: .05em solid var(--c-text);
-    border-bottom: .05em solid var(--c-brand);
+    border-bottom: .05em solid var(--c-header-bg);
   }
 
   button {

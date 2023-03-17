@@ -3,31 +3,38 @@
 :root {
   --c-confirm: #90A955;
   --c-cancel: #BB4430;
+  --c-brand: #6CD4FF;
+  --c-brand2: #9d96b8;
 
   --c-border: rgba(157, 150, 184, .25);
-  --c-bg: rgba(108, 122, 255, .05);
+
+  --c-shade: rgba(0, 0, 0, .55);
 
   --padding: 24px;
   --gap: 10px;
 
-  /* https://coolors.co/6cd4ff-303633-9d96b8-90a955-92140c */
-}
+  /* Safe padding */
+  --spl: max( env(safe-area-inset-left), var(--padding) );
+  --spr: max( env(safe-area-inset-right), var(--padding) );
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --c-page-bg: #131313;
-    --c-text: #6CD4FF;
-    --c-brand: #303633;
-    --c-brand2: #9d96b8;
-  }
+  /* https://coolors.co/6cd4ff-303633-9d96b8-90a955-92140c */
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --c-page-bg: white;
     --c-text: #303633;
-    --c-brand: #6CD4FF;
-    --c-brand2: #9d96b8;
+    --c-header-bg: var(--c-brand);
+    --c-bg: #F8F8FE;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-page-bg: #131313;
+    --c-text: #6CD4FF;
+    --c-header-bg: #303633;
+    --c-bg: #17181E;
   }
 }
 
@@ -44,11 +51,8 @@ body {
 
   display: flex;
   flex-flow: column;
-}
 
-main {
-  flex: 1;
-  overflow: auto;
+  min-height: unset;
 }
 
 h5 {

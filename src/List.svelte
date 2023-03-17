@@ -16,7 +16,7 @@
   let show_new_item = false;
   let new_item = {};
 
-  const addItem = () => {
+  export const addItem = () => {
     new_item = {
       id: random_id(6),
       title: '',
@@ -46,23 +46,11 @@
   ul {
     list-style: none;
     margin: 0; padding: 0;
+    padding-bottom: calc(var(--padding) * 2 + 60px);
   }
   li {
     background: var(--c-bg);
     border-bottom: 1px solid var(--c-border);
-  }
-
-  .add {
-    display: block;
-    width: 100%;
-    font-size: 24px;
-    background: none;
-    border: none;
-    font-weight: 200;
-    line-height: 1;
-    padding: calc(var(--gap) * 1.5) 0;
-    margin: 0;
-    color: var(--c-text);
   }
 
 </style>
@@ -72,9 +60,6 @@
     <Item bind:item />
   </li>
 {/each}</ul>
-<button class="add" on:click={ addItem }>
-  <Icon name="add-item" />
-</button>
 
 <datalist id="suggestions">{#each suggestions as s}
   <option>{s}</option>

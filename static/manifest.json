@@ -1,6 +1,6 @@
 {
-  "short_name": "bb-pwa",
-  "name": "budgetbitch-pwa",
+  "short_name": "BB",
+  "name": "BudgetBitch",
   "start_url": "/",
   "icons": [{
       "src": "apple-touch-icon@512.png",
@@ -14,7 +14,8 @@
     }
   ],
   "background_color": "#6CD4FF",
-  "display": "fullscreen",
+  "theme_color": "#6CD4FF",
+  "display": "standalone",
   "scope": "/",
   "theme_color": "#6CD4FF",
   "description": "Simple shopping list app that helps you stick to your budget"

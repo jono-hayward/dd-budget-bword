@@ -253,6 +253,7 @@
     window.addEventListener('beforeinstallprompt', e => {
       // Prevent the mini-infobar from appearing on mobile
       e.preventDefault();
+      alert( 'prompt!' );
       // Stash the event so it can be triggered later.
       prompt = e;
     });

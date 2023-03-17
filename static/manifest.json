@@ -1,18 +1,21 @@
-
 {
-    "short_name": "bb-pwa",
-    "name": "budgetbitch-pwa",
-    "start_url": "/",
-    "icons": [
-      {
-        "src": "apple-touch-icon.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ],
-    "background_color": "#6CD4FF",
-    "display": "standalone",
-    "scope": "/",
-    "theme_color": "#6CD4FF",
-    "description": "Simple shopping list app that helps you stick to your budget"
+  "short_name": "bb-pwa",
+  "name": "budgetbitch-pwa",
+  "start_url": "/",
+  "icons": [{
+      "src": "apple-touch-icon@512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "apple-touch-icon@192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "#6CD4FF",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#6CD4FF",
+  "description": "Simple shopping list app that helps you stick to your budget"
 }

@@ -391,7 +391,7 @@
 </style>
 
 <div class="header">
-  <h1>Budget <span>Bitch</span></h1>
+  <h1>Budget <span>Buddy</span></h1>
 
   <nav>
     <button on:click={ menu_toggle } aria-label="Open menu">

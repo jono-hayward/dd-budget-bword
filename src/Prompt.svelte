@@ -14,7 +14,7 @@
 
   aside {
     position: fixed;
-    bottom: calc(env(safe-area-inset-bottom) + var(--padding));
+    bottom: 70px;
     left: var(--padding);
     right: var(--padding);
     border-radius: var(--padding);

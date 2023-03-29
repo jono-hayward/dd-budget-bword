@@ -16,7 +16,7 @@
 </style>
 
 <svelte:head>
-  <title>BudgetBuddy</title>
+  <title>BudgetBitch</title>
 </svelte:head>
 
 <header>

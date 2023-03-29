@@ -6,6 +6,7 @@
 		"start": "npm run dev",
 		"dev": "vite dev --host",
 		"predev": "npm run sprites",
+		"prebuild": "npm run sprites",
 		"build": "vite build",
 		"preview": "vite preview --host",
 		"sprites": "svgo -f ./sprite -o ./sprite && svgstore -o ./static/icons.svg ./sprite/*.svg",

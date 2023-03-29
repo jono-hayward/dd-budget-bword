@@ -43,11 +43,10 @@
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    background: var(--c-page-bg);
+    background: linear-gradient( to right, var(--c-bg) 50%, var(--c-cancel) 50% );
     position: relative;
 
     --row-height: 60px;
-    --slide-button-width: 70px;
   }
   .row::-webkit-scrollbar {
     display: none;
@@ -131,17 +130,6 @@
     background: var(--c-bg);
     flex: 1;
   }
-  /* Invisible element that gives us a scroll snap point */
-  .item-btn::after {
-    content: ' ';
-    position: absolute;
-    left: var(--slide-button-width);
-    top: 0;
-    height: 100%;
-    width: 100px;
-    scroll-snap-align: start;
-    pointer-events: none;
-  }
 
   .title {
     flex: 1;
@@ -183,15 +171,13 @@
     border: none;
     margin: 0;
     color: white;
-    min-width: 100%;
     scroll-snap-align: start;
     text-align: right;
-  }
-
-  :global( button.swipe.delete svg ) {
-    position: sticky;
-    right: 25px;
-    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: var(--padding);
+    padding-right: var(--spr);
   }
 
   .amt {

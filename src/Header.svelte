@@ -227,7 +227,11 @@
   const add_sample_list = () => {
     menu_open = false;
 
-    if ( window.confirm('Are you sure? This will overwrite your existing list') ) {
+    if ( $groceries.length ) {
+      if ( window.confirm('Are you sure? This will overwrite your existing list') ) {
+        groceries.set( [...test_list] );
+      }
+    } else {
       groceries.set( [...test_list] );
     }
   }
